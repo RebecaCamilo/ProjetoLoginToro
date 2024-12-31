@@ -1,0 +1,45 @@
+TC1: Login com E-mail e senha válidos
+    Dado que o usuário está na página de login
+    Quando ele preenche o campo "E-mail ou CPF" e "Senha" com e-mail e senha válidos e clica em "Entrar"
+    Então ele deve ser redirecionado para a página inicial
+
+TC2: Login com CPF e senha válidos
+    Dado que o usuário está na página de login
+    Quando ele preenche o campo "E-mail ou CPF" e "Senha" com CPF e senha válidos e clica em "Entrar"
+    Então ele deve ser redirecionado para a página inicial
+
+TC3: Login após redefinição de senha
+    Dado que o usuário redefiniu a senha
+        E está na página de login
+    Quando ele preenche o campo "E-mail ou CPF" e "Senha" com e-mail válido e a nova senha e clica em "Entrar"
+    Então ele deve ser redirecionado para a página inicial
+
+TC4: Login com E-mail inválido
+    Dado que o usuário está na página de login
+    Quando ele preenche o campo "E-mail ou CPF" com e-mail inválido, "Senha" com dado válido e clica em "Entrar"
+    Então a mensagem de erro "Dados incorretos. Digite novamente." deve ser exibida
+
+TC5: Login com CPF inválido
+    Dado que o usuário está na página de login
+    Quando ele preenche o campo "E-mail ou CPF" com CPF inválido, "Senha" com dado válido e clica em "Entrar"
+    Então a mensagem de erro "Dados incorretos. Digite novamente." deve ser exibida
+
+TC6: Login com Senha inválida
+    Dado que o usuário está na página de login
+    Quando ele preenche o campo "E-mail ou CPF" com CPF válido, "Senha" com dado inválido e clica em "Entrar"
+    Então a mensagem de erro "Dados incorretos. Digite novamente." deve ser exibida
+
+TC7: Login com campo "E-mail ou CPF" em branco
+    Dado que o usuário está na página de login
+    Quando ele preenche apenas o campo "Senha" e clica em "Entrar"
+    Então a mensagem de erro "E-mail inválido" deve ser exibida
+
+TC8: Login com campo "Senha" em branco
+    Dado que o usuário está na página de login
+    Quando ele preenche apenas o campo "E-mail ou CPF" e clica em "Entrar"
+    Então a mensagem de erro "Senha inválida" deve ser exibida
+
+TC9: Login com campo "E-mail ou CPF" e "Senha" em branco
+    Dado que o usuário está na página de login
+    Quando ele tenta enviar o formulário sem preencher os campos obrigatórios e clica em "Entrar"
+    Então as mensagens de erro "E-mail inválido" e "Senha inválida" devem ser exibidas
