@@ -17,37 +17,37 @@ Library    SeleniumLibrary
 *** Keywords ***
 
 ### Ações ###
-Preencher campo E-mail ou CPF com ${username}
+Fill in the Email or CPF field with ${username}
     Wait Until Element Is Visible    locator=${LOGIN_PAGE.username_field}
     Input Text    locator=${LOGIN_PAGE.username_field}    text=${username}
 
-Preencher campo Senha com ${password}
+Fill in the Password field with ${password}
     Wait Until Element Is Visible    locator=${LOGIN_PAGE.password_field}
     Input Text    locator=${LOGIN_PAGE.password_field}    text=${password}
 
-Pressionar botao Entrar
+Press Enter button
     Wait Until Element Is Enabled    locator=${LOGIN_PAGE.login_button}
     Click Element    locator=${LOGIN_PAGE.login_button}
 
-Realizar login com ${username} e ${password}
-    Preencher campo E-mail ou CPF com ${username}
-    Preencher campo Senha com ${password}
-    Pressionar botao Entrar
+Login with ${username} and ${password}
+    Fill in the Email or CPF field with ${username}
+    Fill in the Password field with ${password}
+    Press Enter button
 
 ### Verificações ###
-Verificar se conseguiu realizar o login corretamente
+Check if you were redirected to the homepage
     Wait Until Element Is Visible   ${HOME_PAGE.saudation}    10s
     ${url}=    Get Location
     Should Contain    container=${url}    item=/home
 
-Verificar ${mensagem} de erro no ${campo}
-    Wait Until Element Is Visible   ${campo}
-    ${mensagem_obtida}=    Get Text    locator=${campo}
-    ${mensagem_esperada}=    Set Variable    ${mensagem}
-    Should Be Equal    first=${mensagem_obtida}    second=${mensagem_esperada}
+Verificar ${message} de erro no ${field}
+    Wait Until Element Is Visible   ${field}
+    ${obtained_message}=    Get Text    locator=${field}
+    ${expected_message}=    Set Variable    ${message}
+    Should Be Equal    first=${obtained_message}    second=${expected_message}
 
-Verificar ${mensagem} de erro no login
-    Verificar ${mensagem} de erro no ${LOGIN_PAGE.login_error_message}
+Check login error message ${message}
+    Verificar ${message} de erro no ${LOGIN_PAGE.login_error_message}
 
-Verificar ${mensagem} de erro nos campos do formulario
-    Verificar ${mensagem} de erro no ${LOGIN_PAGE.fields_error_message}
+Check ${message} for error in form fields
+    Verificar ${message} de erro no ${LOGIN_PAGE.fields_error_message}

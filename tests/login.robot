@@ -27,32 +27,32 @@ ${password_error_message}    Senha inválida
 
 *** Test Cases ***
 
-TC1: Login com E-mail e senha válidos
-    Realizar login com ${valid_email} e ${valid_password}
-    Verificar se conseguiu realizar o login corretamente
+TC1: Login with valid email and password
+    Login with ${valid_email} and ${valid_password}
+    Check if you were redirected to the homepage
 
-TC2: Login com CPF e senha válidos
-    Realizar login com ${valid_cpf} e ${valid_password}
-    Verificar se conseguiu realizar o login corretamente
+TC2: Login with valid cpf and password
+    Login with ${valid_cpf} and ${valid_password}
+    Check if you were redirected to the homepage
 
-TC4: Login com E-mail inválido
-    Realizar login com ${invalid_email} e ${valid_password}
-    Verificar ${login_error_message} de erro no login
+TC4: Login with invalid email
+    Login with ${invalid_email} and ${valid_password}
+    Check login error message ${login_error_message}
 
-TC5: Login com CPF inválido
-    Realizar login com ${invalid_cpf} e ${valid_password}
-    Verificar ${login_error_message} de erro no login
+TC5: Login with invalid cpf
+    Login with ${invalid_cpf} and ${valid_password}
+    Check login error message ${login_error_message}
 
-TC6: Login com Senha inválida
-    Realizar login com ${valid_cpf} e ${invalid_password}
-    Verificar ${login_error_message} de erro no login
+TC6: Login with invalid password
+    Login with ${valid_cpf} and ${invalid_password}
+    Check login error message ${login_error_message}
 
-TC8: Login com campo "E-mail ou CPF" em branco
-    Preencher campo Senha com ${valid_password}
-    Pressionar botao Entrar
-    Verificar ${email_error_message} de erro nos campos do formulario
+TC8: Login with blank "Email or CPF" field
+    Fill in the Password field with ${valid_password}
+    Press Enter button
+    Check ${email_error_message} for error in form fields
     
-TC9: Login com campo "Senha" em branco
-    Preencher campo E-mail ou CPF com ${valid_email}
-    Pressionar botao Entrar
-    Verificar ${password_error_message} de erro nos campos do formulario
+TC9: Login with blank "Password" field
+    Fill in the Email or CPF field with ${valid_email}
+    Press Enter button
+    Check ${password_error_message} for error in form fields
