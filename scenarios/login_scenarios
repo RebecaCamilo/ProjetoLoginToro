@@ -43,3 +43,8 @@ Cenário 9: Login com campo "E-mail ou CPF" e "Senha" em branco
     Dado que o usuário está na página de login
     Quando ele tenta enviar o formulário sem preencher os campos obrigatórios e clica em "Entrar"
     Então as mensagens de erro "E-mail inválido" e "Senha inválida" devem ser exibidas
+
+Cenário 10: Bloqueio da senha após 5 tentativas de login com senha inválida
+    Dado que o usuário está na página de login
+    Quando ele preenche o campo "E-mail ou CPF" com e-mail válido, "Senha" com dado inválido e clica em "Entrar" por 5 vezes consecutivas
+    Então sua senha deve ser bloqueada, e a mensagem "Sua senha foi bloqueada. Crie uma nova para continuar." deve ser exibida
