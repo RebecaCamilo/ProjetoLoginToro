@@ -40,14 +40,14 @@ Check if you were redirected to the homepage
     ${url}=    Get Location
     Should Contain    container=${url}    item=/home
 
-Verificar ${message} de erro no ${field}
+Check error ${message} in ${field}
     Wait Until Element Is Visible   ${field}
     ${obtained_message}=    Get Text    locator=${field}
     ${expected_message}=    Set Variable    ${message}
     Should Be Equal    first=${obtained_message}    second=${expected_message}
 
 Check login error message ${message}
-    Verificar ${message} de erro no ${LOGIN_PAGE.login_error_message}
+    Check error ${message} in ${LOGIN_PAGE.login_error_message}
 
 Check ${message} for error in form fields
-    Verificar ${message} de erro no ${LOGIN_PAGE.fields_error_message}
+    Check error ${message} in ${LOGIN_PAGE.fields_error_message}

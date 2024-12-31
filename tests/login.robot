@@ -28,31 +28,38 @@ ${password_error_message}    Senha inválida
 *** Test Cases ***
 
 TC1: Login with valid email and password
+    [Tags]    HAPPY PATH
     Login with ${valid_email} and ${valid_password}
     Check if you were redirected to the homepage
 
 TC2: Login with valid cpf and password
+    [Tags]    HAPPY PATH
     Login with ${valid_cpf} and ${valid_password}
     Check if you were redirected to the homepage
 
 TC4: Login with invalid email
+    [Tags]    UNHAPPY PATH
     Login with ${invalid_email} and ${valid_password}
     Check login error message ${login_error_message}
 
 TC5: Login with invalid cpf
+    [Tags]    UNHAPPY PATH
     Login with ${invalid_cpf} and ${valid_password}
     Check login error message ${login_error_message}
 
 TC6: Login with invalid password
+    [Tags]    UNHAPPY PATH
     Login with ${valid_cpf} and ${invalid_password}
     Check login error message ${login_error_message}
 
 TC8: Login with blank "Email or CPF" field
+    [Tags]    UNHAPPY PATH
     Fill in the Password field with ${valid_password}
     Press Enter button
     Check ${email_error_message} for error in form fields
     
 TC9: Login with blank "Password" field
+    [Tags]    UNHAPPY PATH
     Fill in the Email or CPF field with ${valid_email}
     Press Enter button
     Check ${password_error_message} for error in form fields
