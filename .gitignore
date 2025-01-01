@@ -3,3 +3,4 @@ output.xml
 report.html
 /results/*.png
 *.png
+__pycache__
